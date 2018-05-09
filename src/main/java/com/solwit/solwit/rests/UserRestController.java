@@ -39,4 +39,9 @@ public class UserRestController {
 		return userService.updateUser(userTo);
 	}
 
+	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+	public void deleteUser(@PathVariable("id") Long id) {
+		userService.removeUser(id);
+	}
+
 }

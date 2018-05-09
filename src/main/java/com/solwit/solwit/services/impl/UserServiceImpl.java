@@ -11,7 +11,6 @@ import com.solwit.solwit.data.mappers.UserMapper;
 import com.solwit.solwit.data.tos.UserTo;
 import com.solwit.solwit.services.UserService;
 
-//TODO dodać jakąś walidacje
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -27,6 +26,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public UserTo addUser(UserTo userTo) {
 		UserEntity userEntity = UserMapper.map(userTo);
+		userEntity.setId(null);
 		return UserMapper.map(userRepository.save(userEntity));
 	}
 

@@ -11,6 +11,8 @@ import com.solwit.solwit.data.mappers.UserMapper;
 import com.solwit.solwit.data.tos.UserTo;
 import com.solwit.solwit.services.UserService;
 
+//TODO DODAĆ TESTY 
+//TODO dodać jakąś logike którą można testować
 @Service
 public class UserServiceImpl implements UserService {
 

@@ -3,6 +3,7 @@ package com.solwit.solwit.rests;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +15,7 @@ import com.solwit.solwit.services.UserService;
 
 @RestController
 @RequestMapping("/users")
+@CrossOrigin
 public class UserRestController {
 
 	@Autowired

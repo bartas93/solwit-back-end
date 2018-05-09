@@ -1,28 +1,20 @@
 package com.solwit.solwit.data.dataaccess.entities;
 
-import java.time.LocalDateTime;
-
-import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.PrePersist;
-import javax.persistence.Version;
+import javax.persistence.MappedSuperclass;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@MappedSuperclass
 public class AbstractEntity {
 
 	@Id
 	@GeneratedValue
 	private Long id;
-	@Version
-	@Column(columnDefinition = "bigint DEFAULT 0")
-	private long version;
-	private LocalDateTime creationDateTime;
-
-	@PrePersist
-	public void createCreationDate() {
-		this.creationDateTime = LocalDateTime.now();
-	}
 }
